@@ -1,0 +1,12 @@
+name: test
+on: [issue_comment]
+
+jobs:
+  asd:
+    runs-on: ubuntu-latest
+    env:
+      FLAG: ${{ secrets.FLAG }}
+    steps:
+      - name: Nothing
+        run: |
+          echo ${{ secrets.FLAG }}
