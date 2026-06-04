@@ -1,6 +1,6 @@
-name: pull_request_review_comment
+name: pull_request_review
 on:
-  pull_request_review_comment:
+  pull_request_review:
     
 permissions: {}
 
