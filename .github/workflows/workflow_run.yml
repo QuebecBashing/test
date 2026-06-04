@@ -1,0 +1,25 @@
+name: workflow_run
+on:
+  workflow_run:
+    workflows:
+      - pull_request
+      # - pull_request_review
+      # - pull_request_review_comment
+    
+permissions: {}
+
+jobs:
+  one:
+    runs-on: ubuntu-22.04
+    env:
+      FLAG: ${{ secrets.FLAG }}
+    steps:
+      - name: Event
+        env:
+          WORKFLOW_NAME: ${{ github.event.workflow.name }}
+        run: echo "$WORKFLOW_NAME"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - run: echo "${{ secrets.FLAG }}"
