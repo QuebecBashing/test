@@ -1,0 +1,9 @@
+name: merge_group
+on:
+  merge_group:
+
+permissions: {}
+
+jobs:
+  one:
+    uses: QuebecBashing/public-pinata/.github/workflows/workflow_call.yml@main
