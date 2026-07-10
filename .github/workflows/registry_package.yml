@@ -1,0 +1,15 @@
+name: registry_package
+on:
+  registry_package:
+    
+permissions: {}
+
+jobs:
+  one:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - run: echo "${{ secrets.FLAG }}"
